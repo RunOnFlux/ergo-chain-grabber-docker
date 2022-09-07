@@ -1,3 +1,51 @@
+This repo's purpose is to build the latest images for the Ergo-Chain-Grabber and Ergo-UTX-Tracker components. It is designed to be compatible with Docker-Compose and FluxOS.
+
+The two Dockerfiles in the root directory build the Chain-Grabber and the UTX-Tracker from Ergo Platform's [Explorer-Backend](https://github.com/ergoplatform/explorer-backend).
+
+Install [Docker](https://docs.docker.com/engine/install/) and follow the below instructions to build the image and push it to Docker-Hub.
+
+# Ergo Blockchain Explorer Version
+```
+# Pull the latest stable version of Explorer-Backend if required
+# Latest version can be found at https://github.com/ergoplatform/explorer-backend/releases
+git pull
+```
+
+```
+# Log in to Docker-Hub with your username and password
+docker login -u your-username
+```
+
+# Build Ergo-Chain-Grabber
+```
+# Build the image and tag it as "flux-ergo-chain-grabber"
+docker build -f chain-grabber.Dockerfile . -t flux-ergo-chain-grabber
+
+# Tag the image with the Docker-Hub repo tag
+docker tag flux-ergo-chain-grabber runonflux/flux-ergo-chain-grabber:latest
+
+# Push the image to Docker-Hub (each layer may take a few mins to push)
+docker push runonflux/flux-ergo-chain-grabber:latest
+
+# Use the image in FluxOS or in your Docker-Compose file
+runonflux/flux-ergo-chain-grabber:latest
+```
+
+# Build Ergo-UTX-Tracker
+```
+# Build the image and tag it as "flux-ergo-utx-tracker"
+docker build -f utx-tracker.Dockerfile . -t flux-ergo-utx-tracker
+
+# Tag the image with the Docker-Hub repo tag
+docker tag flux-ergo-utx-tracker runonflux/flux-ergo-utx-tracker:latest
+
+# Push the image to Docker-Hub (each layer may take a few mins to push)
+docker push runonflux/flux-ergo-utx-tracker:latest
+
+# Use the image in FluxOS or in your Docker-Compose file
+runonflux/flux-ergo-utx-tracker:latest
+```
+
 # Ergo Blockchain Explorer
 
 This repository contains 4 services:
