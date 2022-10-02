@@ -18,32 +18,32 @@ docker login -u your-username
 
 # Build Ergo-Chain-Grabber
 ```
-# Build the image and tag it as "flux-ergo-chain-grabber"
-docker build -f chain-grabber.Dockerfile . -t flux-ergo-chain-grabber
+# Build the image and tag it as "ergo-chain-grabber"
+docker build -f chain-grabber.Dockerfile . -t ergo-chain-grabber
 
 # Tag the image with the Docker-Hub repo tag
-docker tag flux-ergo-chain-grabber runonflux/flux-ergo-chain-grabber:latest
+docker tag ergo-chain-grabber runonflux/ergo-chain-grabber:latest
 
 # Push the image to Docker-Hub (each layer may take a few mins to push)
-docker push runonflux/flux-ergo-chain-grabber:latest
+docker push runonflux/ergo-chain-grabber:latest
 
 # Use the image in FluxOS or in your Docker-Compose file
-runonflux/flux-ergo-chain-grabber:latest
+runonflux/ergo-chain-grabber:latest
 ```
 
 # Build Ergo-UTX-Tracker
 ```
-# Build the image and tag it as "flux-ergo-utx-tracker"
-docker build -f utx-tracker.Dockerfile . -t flux-ergo-utx-tracker
+# Build the image and tag it as "ergo-utx-tracker"
+docker build -f utx-tracker.Dockerfile . -t ergo-utx-tracker
 
 # Tag the image with the Docker-Hub repo tag
-docker tag flux-ergo-utx-tracker runonflux/flux-ergo-utx-tracker:latest
+docker tag ergo-utx-tracker runonflux/ergo-utx-tracker:latest
 
 # Push the image to Docker-Hub (each layer may take a few mins to push)
-docker push runonflux/flux-ergo-utx-tracker:latest
+docker push runonflux/ergo-utx-tracker:latest
 
 # Use the image in FluxOS or in your Docker-Compose file
-runonflux/flux-ergo-utx-tracker:latest
+runonflux/ergo-utx-tracker:latest
 ```
 
 # Ergo Blockchain Explorer
